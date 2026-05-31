@@ -618,7 +618,7 @@ async def verify_webhook(request: Request):
     token = params.get("hub.verify_token")
     challenge = params.get("hub.challenge")
     if mode == "subscribe" and token == CONFIG["FB_VERIFY_TOKEN"]:
-        return int(challenge) if challenge else 200
+        return PlainTextResponse(content=challenge) if challenge else PlainTextResponse(content="OK")
     raise HTTPException(status_code=403, detail="Verification failed")
 
 
