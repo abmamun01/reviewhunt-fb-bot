@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: reviewhunt-fb-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn bot:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: VISION_API_KEY
+        sync: false
+      - key: FB_PAGE_ACCESS_TOKEN
+        sync: false
+      - key: FB_VERIFY_TOKEN
+        value: hermes_bot_123
+      - key: PUBLIC_URL
+        value: https://your-app-name.onrender.com
