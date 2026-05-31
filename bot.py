@@ -15,7 +15,7 @@ from datetime import datetime
 
 import requests
 from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse
 
 # ─── Configuration ───────────────────────────────────────────────────────
 
